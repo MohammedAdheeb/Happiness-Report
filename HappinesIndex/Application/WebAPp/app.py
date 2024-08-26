@@ -24,15 +24,86 @@ st.title("Happiness Score Prediction")
 year = st.slider("Select the year", min_value=2020, max_value=2050, value=2024)
 
 # Country selection
-country = st.selectbox("Select the country", ["United States", "India", "Iran"])
+country = st.selectbox("Select the country", ['Switzerland', 'Iceland', 'Denmark', 'Norway', 'Canada', 'Finland',
+       'Netherlands', 'Sweden', 'New Zealand', 'Australia', 'Israel',
+       'Costa Rica', 'Austria', 'Mexico', 'United States', 'Brazil',
+       'Luxembourg', 'Ireland', 'Belgium', 'United Arab Emirates',
+       'United Kingdom', 'Venezuela', 'Singapore', 'Panama', 'Germany',
+       'Chile', 'France', 'Argentina', 'Uruguay', 'Colombia', 'Thailand',
+       'Saudi Arabia', 'Spain', 'Malta', 'El Salvador', 'Guatemala',
+       'Uzbekistan', 'Slovakia', 'Japan', 'South Korea', 'Ecuador',
+       'Bahrain', 'Italy', 'Bolivia', 'Moldova', 'Paraguay', 'Kazakhstan',
+       'Slovenia', 'Lithuania', 'Nicaragua', 'Peru', 'Poland', 'Malaysia',
+       'Croatia', 'Russia', 'Jamaica', 'Cyprus', 'Algeria', 'Kosovo',
+       'Mauritius', 'Estonia', 'Indonesia', 'Vietnam', 'Kyrgyzstan',
+       'Nigeria', 'Pakistan', 'Jordan', 'Montenegro', 'China', 'Zambia',
+       'Romania', 'Serbia', 'Portugal', 'Latvia', 'Philippines',
+       'Morocco', 'Albania', 'Bosnia and Herzegovina',
+       'Dominican Republic', 'Mongolia', 'Greece', 'Lebanon', 'Hungary',
+       'Honduras', 'Tajikistan', 'Tunisia', 'Bangladesh', 'Iran',
+       'Ukraine', 'Iraq', 'South Africa', 'Ghana', 'Zimbabwe', 'Liberia',
+       'India', 'Nepal', 'Ethiopia', 'Sierra Leone', 'Mauritania',
+       'Kenya', 'Armenia', 'Botswana', 'Myanmar', 'Georgia', 'Malawi',
+       'Sri Lanka', 'Cameroon', 'Bulgaria', 'Egypt', 'Mali', 'Uganda',
+       'Senegal', 'Gabon', 'Niger', 'Cambodia', 'Tanzania', 'Madagascar',
+       'Chad', 'Guinea', 'Ivory Coast', 'Burkina Faso', 'Afghanistan',
+       'Benin', 'Togo'])
 
 # Input fields
-GDP_per_Capita = st.number_input("Enter the GDP per Capita", min_value=0.0, format="%.2f")
-Social_Support = st.number_input("Enter the Social Support", min_value=0.0, format="%.2f")
-Healthy_life_expectancy = st.number_input("Enter the Healthy life expectancy", min_value=0.0, format="%.2f")
-Freedom_to_make_life_choices = st.number_input("Enter the Freedom to make life choices", min_value=0.0, format="%.2f")
-Generosity = st.number_input("Enter the Generosity", min_value=0.0, format="%.2f")
-Perceptions_of_corruption = st.number_input("Enter the Perceptions of corruption", min_value=0.0, format="%.2f")
+# Define the slider ranges
+GDP_per_Capita = st.slider(
+    "Enter the GDP per Capita", 
+    min_value=0.0, 
+    max_value=100.0,  # Example max value, adjust as needed
+    value=0.0,  # Default value
+    step=0.01,  # Step size for increments
+    format="%.2f"
+)
+
+Social_Support = st.slider(
+    "Enter the Social Support", 
+    min_value=0.0, 
+    max_value=1.0,  # Example max value, adjust as needed
+    value=0.0,  # Default value
+    step=0.01,  # Step size for increments
+    format="%.2f"
+)
+
+Healthy_life_expectancy = st.slider(
+    "Enter the Healthy life expectancy", 
+    min_value=0.0, 
+    max_value=100.0,  # Example max value, adjust as needed
+    value=0.0,  # Default value
+    step=0.01,  # Step size for increments
+    format="%.2f"
+)
+
+Freedom_to_make_life_choices = st.slider(
+    "Enter the Freedom to make life choices", 
+    min_value=0.0, 
+    max_value=1.0,  # Example max value, adjust as needed
+    value=0.0,  # Default value
+    step=0.01,  # Step size for increments
+    format="%.2f"
+)
+
+Generosity = st.slider(
+    "Enter the Generosity", 
+    min_value=0.0, 
+    max_value=1.0,  # Example max value, adjust as needed
+    value=0.0,  # Default value
+    step=0.01,  # Step size for increments
+    format="%.2f"
+)
+
+Perceptions_of_corruption = st.slider(
+    "Enter the Perceptions of corruption", 
+    min_value=0.0, 
+    max_value=1.0,  # Example max value, adjust as needed
+    value=0.0,  # Default value
+    step=0.01,  # Step size for increments
+    format="%.2f"
+)
 
 # Submit button
 if st.button("Predict Happiness Score"):
