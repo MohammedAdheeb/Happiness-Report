@@ -49,20 +49,7 @@ def predict():
     # Make prediction
     prediction = random_forest_model.predict(input_data[features])
     result = prediction[0]
-    # if the perception of corruption is greater than 0.5, the country is corrupt
-    if Perceptions_of_corruption > 0.5:
-        #reduce the happiness score by a percentage
-        result = result - (result * 0.283)
-    elif Perceptions_of_corruption < 0.5:
-        #increase the happiness score by a percentage
-        result = result - (result * 0.05)
-    
-    if Generosity > 0.5:
-        #increase the happiness score by a percentage
-        result = result + (result * 0.05)
-    elif Generosity < 0.5:
-        #reduce the happiness score by a percentage
-        result = result + (result * 0.02)
+  
     
     # Return the prediction as a JSON response
     return jsonify({"prediction": result})
